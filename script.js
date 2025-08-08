@@ -18,7 +18,18 @@
     localStorage.setItem('salvarDados', JSON.stringify(dados));
     alert('Dados salvos com sucesso!');
 
-    console.log(JSON.parse(localStorage.getItem('salvarDados')));
-
-    console.log(localStorage.getItem('salvarDados'));
+    
   }
+
+  // Ao carregar a página
+window.onload = function() {
+  const dadosSalvos = localStorage.getItem('salvarDados');
+  if (dadosSalvos) {
+    const dados = JSON.parse(dadosSalvos);
+    document.getElementById('cep').value = dados.cep || '';
+    document.getElementById('rua').value = dados.rua || '';
+    document.getElementById('bairro').value = dados.bairro || '';
+    document.getElementById('cidade').value = dados.cidade || '';
+    document.getElementById('uf').value = dados.uf || '';
+  }
+};
