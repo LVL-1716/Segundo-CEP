@@ -17,4 +17,8 @@
     
     localStorage.setItem('salvarDados', JSON.stringify(dados));
     alert('Dados salvos com sucesso!');
+
+    console.log(JSON.parse(localStorage.getItem('salvarDados')));
+
+    console.log(localStorage.getItem('salvarDados'));
   }
